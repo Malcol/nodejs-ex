@@ -2,11 +2,17 @@
 var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
+
+var publicDirectory= "public_html";
     
 Object.assign=require('object-assign')
 
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
+
+// Browser Cache
+var oneDay = 86400000;
+app.use('/', express.static(__dirname + '/' + publicDirectory + '/', { maxAge: oneDay }));
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
@@ -55,6 +61,10 @@ var initDb = function(callback) {
     console.log('Connected to MongoDB at: %s', mongoURL);
   });
 };
+
+// Browser Cache
+var oneDay = 86400000;
+app.use('/', express.static(__dirname + '/' + publicDirectory + '/', { maxAge: oneDay }));
 
 app.get('/', function (req, res) {
   // try to initialize the db on every request if it's not already
