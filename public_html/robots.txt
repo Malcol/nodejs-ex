@@ -1,0 +1,8 @@
+User-agent: Twitterbot
+Disallow:
+
+Allow: /img/ico
+
+User-agent: *
+Disallow: /cgi-bin/
+Sitemap: http://www.sanidadpolitecnico-medina.rhcloud.com/sitemap.xml

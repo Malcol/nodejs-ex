@@ -1,0 +1,26 @@
+
+Making code changes
+
+Install the Git client for your operating system, and from your command line run
+
+git clone ssh://583a06be89f5cf86900000e9@sanidadpolitecnico-medina.rhcloud.com/~/git/sanidadpolitecnico.git/
+cd sanidadpolitecnico/
+
+This will create a folder with the source code of your application. After making a change, add, commit, and push your changes.
+
+git add .
+git commit -m 'My changes'
+git push
+
+When you push changes the OpenShift server will report back its status on deploying your code. The server will run any of your configured deploy hooks and then restart the application.
+Manage your app
+
+The console is convenient, but if you need deeper control try our other client tools
+Command-Line
+
+All of the capabilities of OpenShift are exposed through our command line tool, rhc. Follow these steps to install the client on Linux, Mac OS X, or Windows.
+
+After installing the RHC read more on how to manage your application from the command line in our User Guide.
+JBoss Developer Studio
+
+The JBoss Developer Studio is a full featured IDE with OpenShift integration built in. It gives you the ability to create, edit and deploy applications without having to leave the IDE. Links to download, install and use the JBoss Developer Studio for Linux, Mac OS X, or Windows can be found on the JBoss Developer Studio tools page.
